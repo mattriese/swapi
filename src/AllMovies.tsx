@@ -1,29 +1,15 @@
 import React from 'react';
-//import { useQuery } from '@apollo/react-hooks';
-//import { gql } from 'apollo-boost';
+import { films, people } from './query'
 import {
-    ApolloClient,
-    InMemoryCache,
-    ApolloProvider,
     useQuery,
     gql
   } from "@apollo/client";
-// import MovieCard from './Movie';
 
-const query = gql`{
-  allFilms {
-    films {
-      title
-      episodeID
-      directors
-      id
-    }
-  }
-}`;
+
 
 
 const AllMovies: React.FC = () => {
-  const { loading, error, data } = useQuery(query);
+  const { loading, error, data } = useQuery(films);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   console.log('data---->>', data.allFilms.films)

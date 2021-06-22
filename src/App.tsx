@@ -1,23 +1,16 @@
-// import React from 'react';
+
 import './App.css';
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  gql
+  ApolloProvider
 } from "@apollo/client";
 import AllMovies from "./AllMovies";
 
 const client = new ApolloClient({
-  uri: "http://localhost:57556",
+  uri: "http://localhost:52741",
   cache: new InMemoryCache()
 });
-
-// const client = () => {
-//   return new ApolloClient({
-//     uri: "http://localhost:57556"
-//   })
-// }
 
 
 const App: React.FC = () => {

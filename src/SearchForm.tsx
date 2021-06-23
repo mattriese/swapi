@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import './SearchForm.css';
+
 
 /**
  * SearchForm component
@@ -13,7 +13,7 @@ import './SearchForm.css';
  *
  * CompanyList / JobList -> SearchForm
  */
-const SearchForm: React.FC = () => {
+const SearchForm: React.FC = ({handleSearch}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {

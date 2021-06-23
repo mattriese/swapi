@@ -9,29 +9,24 @@ import SearchForm from './SearchForm';
 
 const AllCharacters: React.FC = () => {
 
-    // interface isLoadingState {
-    //     isLoading: boolean;
-    //     setIsLoading: React.Dispatch<React.SetStateAction<undefined>>;
-    //   }
     interface Character {
         name: string;
         birthYear: string;
         gender: string;
     }
-    //const initialState = { isLoading: Boolean }
-    //const initialChar: Character = { name: "", birthYear: "", gender: ""};
-    //const [isLoading, setIsLoading] = useState<boolean>(true);
+
     const [ char, setChar ] = useState<Character | null>(null);
     const { loading, error, data } = useQuery(people);
-    //const { isLoading, setIsLoading }: isLoadingState = useState()
-    //console.log("people===== ", people);
 
+    type Props = {
+        handleSearch: (searchTerm: string) => void;
+    }
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
     //let char: Character;
     const handleSearch = (searchTerm: string): void => {
         setChar(data.allPeople.people.find((p: Character) => p.name === searchTerm))
-        //setIsLoading(false);
+        console.log("char=== ", char);
     }
 
     console.log('data CHARS---->>', data.allPeople.people)

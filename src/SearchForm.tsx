@@ -16,6 +16,10 @@ import Button from 'react-bootstrap/Button';
 const SearchForm: React.FC = ({handleSearch}) => {
   const [searchTerm, setSearchTerm] = useState("");
 
+  interface SearchFormProps {
+      handleSearch: 
+  }
+
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     setSearchTerm(evt.target.value);
   }

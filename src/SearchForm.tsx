@@ -24,7 +24,9 @@ const SearchForm: React.FC = () => {
     console.log('handleSubmit ran');
     console.log('searchTerm in handlesubmit= ', searchTerm);
     evt.preventDefault();
+
     handleSearch(searchTerm);
+
   }
 
   return (

@@ -14,7 +14,7 @@ const AllCharacters: React.FC = () => {
     //   }
 
     const initialState = { isloading: Boolean }
-    const [isLoading, setIsLoading] = useState(initialState);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const { loading, error, data } = useQuery(people)
     //const { isLoading, setIsLoading }: isLoadingState = useState()
     console.log("people===== ", people);
